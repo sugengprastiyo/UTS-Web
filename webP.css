@@ -1,0 +1,16 @@
+#slider{
+	padding-top: 25px;
+	padding-right: 195px;
+	position: relative;
+	width: 200px;
+	height: 200px;
+}
+
+#slider img{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+}

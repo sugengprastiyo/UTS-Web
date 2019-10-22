@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pioneer</title>
+  <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="uts33.css">
+  <script src="jquery-3.4.1.js"></script>
+
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <script>
+    function initialize() {
+      // body...
+      var propertiPeta = {
+        center:new google.maps.LatLng(-7.463188,112.431937),
+        zoom:9,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+
+      var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+
+      //membuat marker
+      var peta = new google.maps.Marker({
+        position: new google.maps.LatLng(-7.463188,112.431937),
+        map: peta
+      });
+    }
+
+    //event jendela di-load
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+
+  <script>
+    var i=0;
+    $(document).ready(function () {
+      // body...
+      $('.slidertitle, #slider img').hide() 
+        // body...
+        showNextImage();
+        setInterval('showNextImage()', 3000);   
+    });
+
+    function showNextImage() {
+      i++;
+      $('#sliderImage' + i).appendTo('#slider').fadeIn(1100).delay(1100).fadeOut(1100);
+      $('#title' + i).appendTo('#slider').fadeIn(1100).delay(1100).fadeOut(1100);
+      if (i==3) {
+        i=0;
+      }
+    };
+  </script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Header -->
+        <div class="row">
+          <div class="col-md-3 mt-3">
+            <div>
+              <img src="img/logo.jpg">
+            </div>
+          </div>
+          <div class="col-md-9 mt-3">
+            <h3 class="text-mono text-center ">Pioneer</h3>
+            <h5 class="text-mono text-center">Best Website Ever</h5>
+          </div>
+        </div>
+        <br>    
+        <!-- Navigation -->
+        <nav class="navbar navbar-light bg-dark justify-content-between text-white"> 
+          <a class="navbar-brand">Home</a>
+          <a class="navbar-brand">About Us</a>
+          <a class="navbar-brand">Services</a>
+          <a class="navbar-brand">Clients</a>
+          <a class="navbar-brand">Partners</a>
+          <a class="navbar-brand">Contact Us</a>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </nav>
+      </div>
+    </div>
+  </div>
+      <!-- Content -->
+      <div class="container-fluid">
+      
+        <div class="card">
+          <div class="card-header">
+            <h4 class="text-mono text-center">Content</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <center><div id="slider">
+                  <img id="sliderImage1" src="img/kamera1.jpg">
+                  
+
+                  <img id="sliderImage2" src="img/kamera2.jpg">
+                  
+
+                  <img id="sliderImage3" src="img/kamera3.jpg">
+                       
+                </div>
+                </center>
+                <br><br><br>
+                <hr>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <h5 class="card-title" align="center">Portofolio</h5><br>
+                <p class="card-text" align="center">There are so many designs as we did before you can just click to view or take it.<br><br>
+                </p>
+              </div>
+              <div class="col-md-4">
+                <h5 class="card-title" align="center">Portofolio</h5><br>
+                <p class="card-text" align="center">There are so many designs as we did before you can just click to view or take it.<br><br>
+                </p>
+              </div>
+              <div class="col-md-4">
+                <h5 class="card-title" align="center">Portofolio</h5><br>
+                <p class="card-text" align="center">There are so many designs as we did before you can just click to view or take it.<br><br>
+                </p>
+              </div>
+            </div>
+            </div>  
+          </div>
+        </div>
+        </div>
+      
+    </div>
+    <!-- Footer -->
+    <div class="footer-bottom">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="text-md-center mt-3">Maps</h4>
+            <div id="googleMap" style="width:100%;height: 200px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
